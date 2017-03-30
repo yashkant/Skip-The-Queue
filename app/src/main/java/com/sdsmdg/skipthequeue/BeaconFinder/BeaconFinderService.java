@@ -30,16 +30,15 @@ public class BeaconFinderService extends Service {
     private ArrayList<IEddystoneDevice> beaconArray;
     private LocalBroadcastManager localBroadcastManager;
 
-    //Testing
-    static final public String intent_filter = "just_fucking_around";
-    static final public String beacons_array = "writing_cause_no_one_would_ever_read";
-    static final public String string_test = "writing_cause_read";
+    //Static Cosntants
+    static final public String intent_filter = "1";
+    static final public String beacons_array = "2";
+    static final public String string_test = "3";
 
 
     @Override
     public void onCreate() {
 
-        Log.i("HEy","Started");
         intializeSDK();
         beaconArray = new ArrayList<>();
         localBroadcastManager = LocalBroadcastManager.getInstance(this);
@@ -118,7 +117,6 @@ public class BeaconFinderService extends Service {
     public int onStartCommand(Intent intent, int flags, int startId)
     {
         startScanning();
-
         return super.onStartCommand(intent, flags, startId);
     }
 
@@ -135,17 +133,14 @@ public class BeaconFinderService extends Service {
 
     @Override
     public void onDestroy() {
-
+        
         stopScanning();
-
-
     }
 
     private void stopScanning() {
 
         proximityManager.stopScanning();
         proximityManager.disconnect();
-
     }
 
 }
