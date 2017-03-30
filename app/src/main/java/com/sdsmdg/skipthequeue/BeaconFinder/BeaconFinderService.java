@@ -30,7 +30,7 @@ public class BeaconFinderService extends Service {
     private ArrayList<IEddystoneDevice> beaconArray;
     private LocalBroadcastManager localBroadcastManager;
 
-    //Static Cosntants
+    //Static Constants
     static final public String intent_filter = "1";
     static final public String beacons_array = "2";
     static final public String string_test = "3";
